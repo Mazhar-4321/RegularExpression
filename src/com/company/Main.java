@@ -22,13 +22,15 @@ public class Main {
 
     private String validatePassword() {
         System.out.println("Please Enter password");
-        String pattern = "(?=.*[0-9])(?=.*[A-Z])(^([a-zA-Z0-9[^a-zA-Z0-9]]{8,})$)";
+        String oldPattern = "(?=.*[0-9])(?=.*[A-Z])(^([a-zA-Z0-9[^a-zA-Z0-9]]{8,})$)";
+        String newPattern="((?=.*[0-9])(?=.*[A-Z])(?=.{8,}$).*)(^([a-zA-Z0-9]*[^a-zA-Z0-9][a-zA-Z0-9]*)$)";
         String password = scanner.next();
         String errorMessageRule1 = "Must contain at least 8 characters";
         String errorMessageRule2 = "Must contain at least 1 Upper Case character";
         String errorMessageRule3 = "Must contain at least 1 Number";
-        while (!password.matches(pattern)) {
-            System.out.println("Invalid Password :" + errorMessageRule1 + "," + errorMessageRule2 + " ," + errorMessageRule3);
+        String errorMessageRule4="Must contain exactly one Special Character";
+        while (!password.matches(newPattern)) {
+            System.out.println("Invalid Password :" + errorMessageRule1 + "," + errorMessageRule2 + " ," + errorMessageRule3+" ,"+errorMessageRule4);
             System.out.println("Please Enter Password");
             password = scanner.next();
         }
