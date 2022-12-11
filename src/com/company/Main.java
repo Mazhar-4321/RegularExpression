@@ -13,11 +13,11 @@ public class Main {
     }
 
     private void validateUserRegistration() {
-        validateName("firstName");
-        validateName("lastName");
+        user.setFirstName(validateName("firstName"));
+        user.setLastName(validateName("lastName"));
     }
 
-    private void validateName(String firstNameOrLastName) {
+    private String validateName(String firstNameOrLastName) {
         System.out.println("Please Enter Your " + firstNameOrLastName);
         String name = scanner.next();
         String pattern = "^[A-Z][a-zA-Z0-9[^a-zA-Z0-9]]{2,}";
@@ -27,6 +27,6 @@ public class Main {
             name = scanner.next();
         }
         System.out.println("The " + firstNameOrLastName + " entered is registered successfully");
-        user.setFirstName(name);
+        return name;
     }
 }
