@@ -21,8 +21,8 @@ public class Main {
 
     private String validateMobileNumber() {
         System.out.println("Please Enter Your Mobile Number");
-        String mobileNumber ;
-                scanner.nextLine();
+        String mobileNumber;
+        scanner.nextLine();
         String pattern = "^(91 [1-9][0-9]{9})$";
         mobileNumber = scanner.nextLine();
         while (!mobileNumber.matches(pattern)) {
