@@ -5,6 +5,16 @@ public class User {
     private String lastName;
     private String email;
 
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    private String mobileNumber;
+
     public String getEmail() {
         return email;
     }

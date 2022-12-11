@@ -16,6 +16,22 @@ public class Main {
         user.setFirstName(validateName("firstName"));
         user.setLastName(validateName("lastName"));
         user.setEmail(validateEmail());
+        user.setMobileNumber(validateMobileNumber());
+    }
+
+    private String validateMobileNumber() {
+        System.out.println("Please Enter Your Mobile Number");
+        String mobileNumber ;
+                scanner.nextLine();
+        String pattern = "^(91 [1-9][0-9]{9})$";
+        mobileNumber = scanner.nextLine();
+        while (!mobileNumber.matches(pattern)) {
+            System.out.println("Invalid Mobile Number : must follow '91 XXXXXXXXXX' pattern and First Number cant be 0");
+            System.out.println("Please Enter Mobile Number :");
+            mobileNumber = scanner.nextLine();
+        }
+        System.out.println("The mobile Number entered is registered successfully");
+        return mobileNumber;
     }
 
     private String validateEmail() {
@@ -23,7 +39,7 @@ public class Main {
         String email = scanner.next();
         String pattern = "^([a-zA-z]{3,}[0-9._+-]*(\\.[a-z]{2,})?@([a-z]{2,}|[0-9]{1})\\.[a-z]{2,}(\\.[a-z]{2,})?)$";
         while (!email.matches(pattern)) {
-            System.out.println("Invalid email :" + "must follow 'abc.xyz@bl.co.in'  pattern");
+            System.out.println("Invalid email : must follow 'abc.xyz@bl.co.in'  pattern");
             System.out.println("Where abc,bl and co are mandatory and xyz,in are optional, @ and . positions are precise");
             System.out.println("Please Re enter email");
             email = scanner.next();
