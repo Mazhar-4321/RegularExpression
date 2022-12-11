@@ -21,7 +21,7 @@ public class Main {
     }
 
     private String validatePassword() {
-        System.out.println("Please Enter password");
+        System.out.println("Please Enter password");;
         String pattern = "(?=.*[A-Z])(^([a-zA-Z0-9[^a-zA-Z0-9]]{8,})$)";
         String password = scanner.next();
         String errorMessageRule1 = "Must contain at least 8 characters";
