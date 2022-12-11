@@ -17,6 +17,21 @@ public class Main {
         user.setLastName(validateName("lastName"));
         user.setEmail(validateEmail());
         user.setMobileNumber(validateMobileNumber());
+        user.setPassword(validatePassword());
+    }
+
+    private String validatePassword() {
+        System.out.println("Please Enter password");
+        String pattern = "^([a-zA-Z0-9^[a-zA-Z0-9]]{8,})$";
+        String password = scanner.next();
+        String errorMessageRule1 = "Must contain at least 8 characters";
+        while (!password.matches(pattern)) {
+            System.out.println("Invalid Password " + errorMessageRule1);
+            System.out.println("Please Enter Password");
+            password = scanner.next();
+        }
+        System.out.println("The password entered is registered successfully");
+        return password;
     }
 
     private String validateMobileNumber() {

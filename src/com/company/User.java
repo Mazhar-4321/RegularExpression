@@ -4,6 +4,16 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
+    private String mobileNumber;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getMobileNumber() {
         return mobileNumber;
@@ -12,8 +22,6 @@ public class User {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
-
-    private String mobileNumber;
 
     public String getEmail() {
         return email;
