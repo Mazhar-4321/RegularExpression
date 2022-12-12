@@ -56,8 +56,9 @@ public class Main {
     private String validateEmail() {
         System.out.println("Please Enter Your Email");
         String email = scanner.next();
-        String pattern = "^([a-zA-z]{3,}[0-9._+-]*(\\.[a-z]{2,})?@([a-z]{2,}|[0-9]{1})\\.[a-z]{2,}(\\.[a-z]{2,})?)$";
+        String pattern = "\"^(([a-zA-z]{3,}(([.+-@]?[0-9_+-]{1,})|([0-9_+-]*)))(\\\\.[a-z]{2,})?@([a-z]{2,}|[0-9]{1})\\\\.[a-z]{2,}(\\\\.[a-z]{2,})?)$\"";
         while (!email.matches(pattern)) {
+            System.out.println(email.matches(pattern));
             System.out.println("Invalid email : must follow 'abc.xyz@bl.co.in'  pattern");
             System.out.println("Where abc,bl and co are mandatory and xyz,in are optional, @ and . positions are precise");
             System.out.println("Please Re enter email");
